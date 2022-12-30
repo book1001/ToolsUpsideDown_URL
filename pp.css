@@ -143,6 +143,7 @@
   /* padding: 20px; */
 
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 @media only screen and (max-width:600px),(max-height:700px) {
@@ -162,6 +163,7 @@
   padding: 20px;
 
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   /* left: 50%;
   width: 100%;
