@@ -1,0 +1,235 @@
+
+/* pp: Image ================================ */
+
+.ppImg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 95px;
+  text-align: center;
+  transition: .1s ease;
+}
+
+.ppImg img{
+  width: 100%;
+  border: solid;
+  border-color: #000000;
+  border-width: 18px 10px 18px 10px;
+}
+
+
+/* pp ================================ */
+
+.pp1,
+.pp2,
+.pp3,
+.pp4,
+.pp5,
+.pp6,
+.pp7,
+.pp8,
+.pp9,
+.pp10,
+.pp11,
+.pp12,
+.pp13,
+.pp14,
+.pp15,
+.pp16,
+.pp17 {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 34px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+
+/* pp: hover ================================ */
+
+.pp1:hover,
+.pp2:hover,
+.pp3:hover,
+.pp4:hover,
+.pp5:hover,
+.pp6:hover,
+.pp7:hover,
+.pp8:hover,
+.pp9:hover,
+.pp10:hover,
+.pp11:hover,
+.pp12:hover,
+.pp13:hover,
+.pp14:hover,
+.pp15:hover,
+.pp16:hover,
+.pp17:hover {
+  cursor: pointer;
+}
+
+
+/* pp: Detail ================================ */
+
+/* .ppDetail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: 20px;
+  left: 50%;
+  width: 60%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  transform: translate(-50%, 0);
+  z-index: 6;
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+} */
+
+#ppDetail1,
+#ppDetail2,
+#ppDetail3,
+#ppDetail4,
+#ppDetail5,
+#ppDetail6,
+#ppDetail7,
+#ppDetail8,
+#ppDetail9,
+#ppDetail10,
+#ppDetail11,
+#ppDetail12,
+#ppDetail13,
+#ppDetail14,
+#ppDetail15,
+#ppDetail16,
+#ppDetail17 {
+  display: none;
+}
+
+
+/* pp: Detail ================================ */
+
+.ppDetail {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: 20px;
+
+  z-index: 6;
+
+  overflow-y: scroll;
+}
+
+.col4Wapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.ppCol1 {
+	display: grid;
+  grid-template-columns: 1fr;
+
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 20px; */
+
+  backdrop-filter: blur(10px);
+}
+
+@media only screen and (max-width:600px),(max-height:700px) {
+  .ppCol1 {
+    width: 100%;
+    padding-right: 20px;
+  }
+}
+
+.ppCol4 {
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+
+  height: 100%;
+  padding: 20px;
+
+  backdrop-filter: blur(10px);
+
+  /* left: 50%;
+  width: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  transform: translate(-50%, 0); */
+}
+
+.ppBlur {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 100%;
+}
+
+
+/* pp: Detail ================================ */
+* {
+box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.ppPreviewTable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.ppPreview {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.ppPreview img {
+  cursor: pointer;
+}
+
+.ppPreview img:hover {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+position: absolute;
+/* bottom: 15px;
+left: 15px;
+color: white;
+font-size: 20px; */
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+position: absolute;
+top: 10px;
+right: 15px;
+color: white;
+font-size: 35px;
+cursor: pointer;
+}

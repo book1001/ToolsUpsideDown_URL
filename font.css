@@ -1,0 +1,188 @@
+/* font: import ================================================ */
+
+@font-face {
+  font-family: 'FKGroteskMonoTrial-Regular';
+  src: url('./font/FKGroteskMonoTrial-Regular.otf') format('opentype');
+
+  font-family: 'FKGroteskSemiMonoTrial-Regular';
+  src: url('./font/FKGroteskSemiMonoTrial-Regular.otf') format('opentype');
+
+  font-family: 'FKGroteskNeueTrial-Regular';
+  src: url('./font/FKGroteskNeueTrial-Regular.otf') format('opentype');
+
+  font-family: 'FKRomanStandardTrial-Regular';
+  src: url('./font/FKRomanStandardTrial-Regular.otf') format('woff');
+
+  font-family: 'body-serif-bold';
+  src: url('./font/FKRomanStandardTrial-Bold.otf') format('woff');
+
+  font-family: 'body-sans';
+  /* src: url('./font/TimeNewRoman.woff') format('woff'); */
+  src: url('./font/FKGroteskNeueTrial-Regular.otf') format('opentype');
+  /* src: url('./font/FKGroteskNeueTrial-Regular.otf') format('opentype'); */
+  font-family: 'body-sans-bold';
+  src: url('./font/TimeNewRoman.woff') format('woff');
+
+
+
+  font-family: 'HelveticaNeue';
+  src: url('./font/HelveticaNeueLTStd-Roman.otf') format('opentype');
+  font-family: 'FragmentMono';
+  src: url('./font/FragmentMono-Regular.woff2') format('woff');
+}
+
+
+/* text: align ================================================ */
+
+.text-align-left {
+  text-align: left;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+
+
+/* text: drag color ================================================ */
+
+::selection {
+  color: white;
+  background: black;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+
+/* font: menu ================================================ */
+
+.font-menu{
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  text-transform: uppercase;
+  letter-spacing: 0.027em;
+
+  /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+  font-size: 14.4px; */
+  /* text-transform: uppercase;
+  letter-spacing: 0.027em; */
+
+  /* font-family: FKRomanStandardTrial-Regular,serif;
+  font-size: 18px; */
+
+}
+
+
+/* list ================================================ */
+
+ul{
+   list-style:none;
+   /* padding-left:0px; */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+
+  /* margin-top: 0px;
+  margin-bottom: 10px; */
+  padding-left: 40px;
+}
+
+ul li::before {
+  /* content: '→'; */
+  content: '—';
+  margin-left: -40px;
+  margin-right: 20px;
+  /* padding-left: -40px;
+  padding-right: 10px; */
+}
+
+/* font: description ================================================ */
+
+h3 {
+    display: block;
+    font-family: FKGroteskMonoTrial-Regular,sans-serif;
+    /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
+    /* font-family: FKRomanStandardTrial-Regular,serif; */
+    font-size: 14.4px;
+    letter-spacing: 0.027em;
+    /* font-size: 1.17em; */
+    margin-block-start: 0em;
+    margin-block-end: 0.3em;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+
+    text-transform: uppercase;
+
+    /* text-indent: 50px; */
+}
+
+h4 {
+    display: block;
+    font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+    /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
+    /* font-family: FKRomanStandardTrial-Regular,serif; */
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    /* margin-block-start: 1.33em;
+    margin-block-end: 1.33em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+    font-size: 14.4px;
+
+
+}
+
+
+.font-body{
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+
+  line-height: 1.5;
+  /* font-family: HelveticaNeue,sans-serif; */
+  /* font-weight: lighter; */
+  /* font-size: 14px; */
+  /* font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.0rem; */
+
+  /* font-size: 1.7rem; */
+  /* font-size: 1.3rem; */
+  /* line-height: 1.3; */
+  /* font-family: Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 14px; */
+  /* font-size: 24px;
+  line-height: 28px; */
+  /* font-family: neue-haas-grotesk-display,sans-serif;
+  font-weight: 500;
+  font-style: normal; */
+  /* font-family: neue-haas-grotesk-text,sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+  /* font-family: gopher, sans-serif;
+  font-weight: 300;
+  font-style: normal; */
+}
+
+
+
+/* font: pp ================================================ */
+
+.font-pp{
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  text-transform: uppercase;
+  letter-spacing: 0.027em;
+
+  /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif; */
+}

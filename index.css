@@ -1,0 +1,286 @@
+/* Variable ================================================ */
+
+:root {
+  --scrollbar-width: 20px;
+  --scrollbar-right: 0px;
+  --scrollbar-left: 17px;
+}
+
+/* Scrollbar ================================================ */
+
+::-webkit-scrollbar { /* width */
+  width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track { /* Track */
+  background: transparent;
+}
+::-webkit-scrollbar-thumb { /* Handle */
+  background: rgb(0,0,0,1);
+  background-clip: padding-box;
+  border-top: 0px solid transparent;
+  border-right: var(--scrollbar-right) solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: var(--scrollbar-left) solid transparent;
+}
+::-webkit-scrollbar-thumb:active { /* Handle on hover */
+  /* background: rgb(0,0,0,0.24);
+  border-radius: 20px;
+  background-clip: padding-box;
+  border: 5px solid transparent; */
+}
+
+
+/* Body ================================================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Divider =============================================== */
+
+hr {
+    background: #000000;
+    border: 0;
+    height: 1px;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* Layout: image ================================================ */
+
+img {
+  padding: 0;
+  margin: 0;
+}
+
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+img.right {
+  display: block;
+  margin-left: auto;
+}
+
+
+/* Menu: Parents ================================================ */
+
+.menu-top-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  z-index: 7;
+}
+
+.menu-top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  z-index: 7;
+}
+
+.menu-center-left {
+  position: fixed;
+  top: 50%;
+  left: -25px;
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg); /* Safari */
+  -moz-transform: rotate(-90deg); /* Firefox */
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -o-transform: rotate(-90deg); /* Opera */
+}
+
+.menu-bottom-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+}
+
+
+/* Menu: Children > Tools Upside Down ================================================ */
+
+.menu-index {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu-index:hover {
+  transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+}
+
+
+/* Menu: Children > Top Right Buttons ================================================ */
+
+.menu-btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .menu-btn:hover {
+    transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+  }
+}
+
+/* .menu-btn:hover {
+  transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+} */
+
+.menu-btn-upsidedown {
+  transform: scaleY(-1);
+}
+
+
+
+/* Menu: Children > Middle Door ================================================ */
+
+.menu-door {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+/* Menu: Children > Current Time ================================================ */
+
+.menu-time {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+
+
+/* iFrame ================================================ */
+
+iframe{
+  display: block;
+  margin: auto;
+  border:none;
+}
+
+.toolsWorld{
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+  /* border-width: 1px; */
+  width: 100vw;
+  height: 100vh;
+  /* width: 99vw;
+  height: 99vh; */
+}
+
+/* .toolsWorld{
+  position: fixed;
+  top: 0;
+  left: -200px;
+  border: none;
+  width: calc(100% + 300px);
+  height: 100vh;
+} */
+
+.row1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 60%;
+  /* height: 70%; */
+  min-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  transform: translate(-50%, 0);
+  z-index: 7;
+  backdrop-filter: blur(10px);
+  overflow-y: scroll;
+}
+
+.row2 {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  width: 60%;
+  height: 70%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  transform: translate(-50%, 0);
+  z-index: 7;
+  overflow-y: auto;
+}
+
+.row3 {
+  display: none;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  width: 60%;
+  height: 70%;
+  min-width: 500px;
+  min-height: 500px;
+  max-width: 830px;
+  margin: auto;
+  transform: translate(-50%, 0);
+  border: 10px solid #000000;
+  z-index: 7;
+}
+
+/* Layout ================================================ */
+
+.col2 {
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+
+/* Schedule ================================================ */
+
+.tb4 {
+	display: grid;
+  grid-template-columns: 100px 100px 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  border-bottom: 1px solid #000000;
+  backdrop-filter: blur(10px);
+}

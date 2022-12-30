@@ -1,0 +1,90 @@
+/* Responsive layout */
+@media only screen and (max-width:1300px) {
+
+}
+
+@media only screen and (min-width:1125px) {
+
+}
+
+@media only screen and (max-width:1124px) {
+
+
+
+
+}
+
+
+/* Tablet =============================================== */
+
+@media only screen and (max-width:800px) { /* For tablets: */
+
+
+  .col2 {
+      grid-template-columns: 1fr;
+  }
+
+
+
+
+}
+
+@media only screen and (max-width:600px),(max-height:700px) {   /* For tablets: */
+  .row1 {
+    top: 60px;
+    left: 0;
+    width: auto;
+    margin: 0 20px 0 20px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row2 {
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 20px 0 20px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row3 {
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 20px);
+    margin: 0 10px 0 10px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+    border: 0px solid #000000;
+  }
+
+  .ppDetail {
+    top: 60px;
+    padding-top: auto;
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    margin: 0 20px 0 20px;
+    transform: translate(0, 0);
+  }
+
+  .tb4 {
+  	display: grid;
+    grid-template-columns: 40px 40px 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    border-bottom: 1px solid #000000;
+    backdrop-filter: blur(10px);
+  }
+
+}
+
+@media only screen and (max-width:450px) {   /* For tablets: */
+
+}
