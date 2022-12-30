@@ -13,6 +13,9 @@
   font-family: 'FKRomanStandardTrial-Regular';
   src: url('./font/FKRomanStandardTrial-Regular.otf') format('woff');
 
+  font-family: 'FKRomanStandardTrial-Medium';
+  src: url('./font/FKRomanStandardTrial-Medium.otf') format('woff');
+
   font-family: 'FKRasterRomanCompactTrial-Blended';
   src: url('./font/FKRasterRomanCompactTrial-Blended.otf') format('woff');
 
@@ -69,15 +72,15 @@
 .font-menu{
   /* font-family: FKGroteskMonoTrial-Regular,sans-serif;
   font-size: 14.4px; */
-  /* font-family: FKRomanStandardTrial-Regular,serif;
+  font-family: FKRomanStandardTrial-Regular,serif;
   font-size: 16px;
-  letter-spacing: 0.027em; */
+  letter-spacing: 0.027em;
   /* font-family: FKRasterRomanCompactTrial-Blended,serif;
   font-size: 16px;
   letter-spacing: 0.1em; */
-  /* text-transform: uppercase; */
-  font-family: TimeNewRoman,serif;
-  font-size: 20px;
+  text-transform: uppercase;
+  /* font-family: TimeNewRoman,serif;
+  font-size: 20px; */
 
   color: #000000;
   /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
@@ -134,15 +137,15 @@ h3 {
     display: block;
     /* font-family: FKGroteskMonoTrial-Regular,sans-serif;
     font-size: 14.4px; */
-    /* font-family: FKRomanStandardTrial-Regular,serif;
+    font-family: FKRomanStandardTrial-Regular,serif;
     font-size: 16px;
-    letter-spacing: 0.027em; */
+    letter-spacing: 0.027em;
     /* font-family: FKRasterRomanCompactTrial-Blended,serif;
     font-size: 16px;
     letter-spacing: 0.1em; */
-    /* text-transform: uppercase; */
-    font-family: TimeNewRoman,serif;
-    font-size: 20px;
+    text-transform: uppercase;
+    /* font-family: TimeNewRoman,serif;
+    font-size: 20px; */
 
     /* font-size: 1.17em; */
     margin-block-start: 0em;
@@ -157,8 +160,8 @@ h3 {
 }
 
 h4 {
-    display: block;
-    /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+    /* display: block;
+    font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
     font-size: 14.4px; */
     font-family: FKRomanStandardTrial-Regular,serif;
     font-size: 16px;
@@ -214,13 +217,13 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.027em; */
 
-  /* font-family: FKGroteskNeueTrial-Regular,sans-serif;
+  font-family: FKGroteskNeueTrial-Regular,sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.027em; */
+  letter-spacing: 0.027em;
 
-  font-family: TimeNewRoman,serif;
-  font-size: 16px;
+  /* font-family: TimeNewRoman,serif;
+  font-size: 16px; */
 
   /* font-family: FKRomanStandardTrial-Regular,serif;
   font-size: 14.4px;
