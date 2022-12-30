@@ -13,6 +13,11 @@
   font-family: 'FKRomanStandardTrial-Regular';
   src: url('./font/FKRomanStandardTrial-Regular.otf') format('woff');
 
+  font-family: 'FKRasterRomanCompactTrial-Blended';
+  src: url('./font/FKRasterRomanCompactTrial-Blended.otf') format('woff');
+
+
+
   font-family: 'body-serif-bold';
   src: url('./font/FKRomanStandardTrial-Bold.otf') format('woff');
 
@@ -20,7 +25,8 @@
   /* src: url('./font/TimeNewRoman.woff') format('woff'); */
   src: url('./font/FKGroteskNeueTrial-Regular.otf') format('opentype');
   /* src: url('./font/FKGroteskNeueTrial-Regular.otf') format('opentype'); */
-  font-family: 'body-sans-bold';
+
+  font-family: 'TimeNewRoman';
   src: url('./font/TimeNewRoman.woff') format('woff');
 
 
@@ -61,10 +67,18 @@
 /* font: menu ================================================ */
 
 .font-menu{
-  font-family: FKGroteskMonoTrial-Regular,sans-serif;
-  font-size: 14.4px;
-  text-transform: uppercase;
-  letter-spacing: 0.027em;
+  /* font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px; */
+  /* font-family: FKRomanStandardTrial-Regular,serif;
+  font-size: 16px;
+  letter-spacing: 0.027em; */
+  /* font-family: FKRasterRomanCompactTrial-Blended,serif;
+  font-size: 16px;
+  letter-spacing: 0.1em; */
+  /* text-transform: uppercase; */
+  font-family: TimeNewRoman,serif;
+  font-size: 20px;
+
   color: #000000;
   /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
   font-size: 14.4px; */
@@ -118,11 +132,18 @@ ul.bullet li::before {
 
 h3 {
     display: block;
-    font-family: FKGroteskMonoTrial-Regular,sans-serif;
-    /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
-    /* font-family: FKRomanStandardTrial-Regular,serif; */
-    font-size: 14.4px;
-    letter-spacing: 0.027em;
+    /* font-family: FKGroteskMonoTrial-Regular,sans-serif;
+    font-size: 14.4px; */
+    /* font-family: FKRomanStandardTrial-Regular,serif;
+    font-size: 16px;
+    letter-spacing: 0.027em; */
+    /* font-family: FKRasterRomanCompactTrial-Blended,serif;
+    font-size: 16px;
+    letter-spacing: 0.1em; */
+    /* text-transform: uppercase; */
+    font-family: TimeNewRoman,serif;
+    font-size: 20px;
+
     /* font-size: 1.17em; */
     margin-block-start: 0em;
     /* margin-block-end: 0.3em; */
@@ -132,16 +153,16 @@ h3 {
     margin-inline-end: 0px;
     font-weight: normal;
 
-    text-transform: uppercase;
-
     /* text-indent: 50px; */
 }
 
 h4 {
     display: block;
-    font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+    /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+    font-size: 14.4px; */
+    font-family: FKRomanStandardTrial-Regular,serif;
+    font-size: 16px;
     /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
-    /* font-family: FKRomanStandardTrial-Regular,serif; */
     /* margin-block-start: 0.3em;
     margin-block-end: 0.3em; */
     /* margin-block-start: 1.33em;
@@ -149,9 +170,6 @@ h4 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: normal;
-    font-size: 14.4px;
-
-
 }
 
 
@@ -191,10 +209,23 @@ h4 {
 /* font: pp ================================================ */
 
 .font-pp{
-  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  /* font-family: FKGroteskMonoTrial-Regular,sans-serif;
   font-size: 14.4px;
   text-transform: uppercase;
-  letter-spacing: 0.027em;
+  letter-spacing: 0.027em; */
+
+  /* font-family: FKGroteskNeueTrial-Regular,sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.027em; */
+
+  font-family: TimeNewRoman,serif;
+  font-size: 16px;
+
+  /* font-family: FKRomanStandardTrial-Regular,serif;
+  font-size: 14.4px;
+  text-transform: uppercase;
+  letter-spacing: 0.027em; */
 
   /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif; */
 }

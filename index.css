@@ -224,7 +224,7 @@ iframe{
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 60%;
+  width: 50%;
   /* height: 70%; */
   min-width: 500px;
   min-height: 500px;
@@ -241,7 +241,7 @@ iframe{
   position: fixed;
   top: 0;
   left: 50%;
-  width: 60%;
+  width: 50%;
   height: 100%;
   min-width: 500px;
   min-height: 500px;
@@ -256,7 +256,7 @@ iframe{
   position: fixed;
   top: 15%;
   left: 50%;
-  width: 60%;
+  width: 50%;
   height: 70%;
   min-width: 500px;
   min-height: 500px;
