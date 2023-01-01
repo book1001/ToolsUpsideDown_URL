@@ -89,7 +89,7 @@ img.right {
   left: 20px;
   margin: 0;
   padding: 0;
-  z-index: 7;
+  z-index: 8;
 }
 
 .menu-top-right {
@@ -98,7 +98,7 @@ img.right {
   right: 20px;
   margin: 0;
   padding: 0;
-  z-index: 7;
+  z-index: 8;
 }
 
 .menu-center-left {
@@ -248,6 +248,8 @@ iframe{
   margin: auto;
   transform: translate(-50%, 0);
   z-index: 7;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   overflow-y: auto;
 }
 
