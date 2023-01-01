@@ -32,7 +32,23 @@
   font-family: 'TimeNewRoman';
   src: url('./font/TimeNewRoman.woff') format('woff');
 
+  font-family: 'BaskervilleMTStd-Regular';
+  src: url('./font/BaskervilleMTStd-Regular.otf') format('opentype');
 
+  font-family: 'GaramondPremrPro-Disp';
+  src: url('./font/GaramondPremrPro-Disp.otf') format('opentype');
+
+  font-family: 'Century';
+  src: url('./font/Century.TTF') format('ttf');
+
+  font-family: 'COURIER';
+  src: url('./font/COURIER.ttf') format('ttf');
+
+  font-family: 'NotoSerif-Regular';
+  src: url('./font/NotoSerif-Regular.ttf') format('ttf');
+
+  font-family: 'CourierPrime-Regular';
+  src: url('./font/CourierPrime-Regular.ttf') format('ttf');
 
   font-family: 'HelveticaNeue';
   src: url('./font/HelveticaNeueLTStd-Roman.otf') format('opentype');
@@ -79,8 +95,15 @@
   font-size: 16px;
   letter-spacing: 0.1em; */
   text-transform: uppercase;
-  /* font-family: TimeNewRoman,serif;
-  font-size: 20px; */
+  /* font-family: Century,serif;
+  font-size: 16.8px;
+  letter-spacing: 0.003em; */
+
+  /* font-family: COURIER,sans-serif;
+  font-size: 17px; */
+
+  /* font-family: NotoSerif-Regular,serif;
+  font-size: 17px; */
 
   color: #000000;
   /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
@@ -134,7 +157,7 @@ ul.bullet li::before {
 /* font: description ================================================ */
 
 h3 {
-    display: block;
+    /* display: block; */
     font-family: FKGroteskMonoTrial-Regular,sans-serif;
     font-size: 14.4px;
     /* font-family: FKRomanStandardTrial-Regular,serif;
@@ -144,8 +167,15 @@ h3 {
     font-size: 16px;
     letter-spacing: 0.1em; */
     text-transform: uppercase;
-    /* font-family: TimeNewRoman,serif;
-    font-size: 20px; */
+    /* font-family: Century,serif;
+    font-size: 16.5px; */
+    /* font-family: COURIER,sans-serif;
+    font-size: 17px; */
+    /* font-family: NotoSerif-Regular,serif;
+    font-size: 17px; */
+    /* font-family: Century,serif;
+    font-size: 16.8px;
+    letter-spacing: 0.003em; */
 
     /* font-size: 1.17em; */
     margin-block-start: 0em;
@@ -166,6 +196,15 @@ h4 {
     /* font-family: FKRomanStandardTrial-Regular,serif;
     font-size: 16px; */
     /* font-family: FKGroteskNeueTrial-Regular,sans-serif; */
+    /* font-family: Century,serif;
+    font-size: 16.5px; */
+    /* font-family: COURIER,sans-serif;
+    font-size: 17px; */
+    /* font-family: NotoSerif-Regular,serif;
+    font-size: 17px; */
+    /* font-family: Century,serif;
+    font-size: 16.8px; */
+    /* letter-spacing: 0.003em; */
     /* margin-block-start: 0.3em;
     margin-block-end: 0.3em; */
     /* margin-block-start: 1.33em;
@@ -222,13 +261,23 @@ h4 {
   text-transform: uppercase;
   letter-spacing: 0.027em; */
 
-  /* font-family: TimeNewRoman,serif;
-  font-size: 16px; */
+  /* font-family: Century,serif;
+  font-size: 16.5px; */
+
+  /* font-family: COURIER,sans-serif;
+  font-size: 17px; */
 
   /* font-family: FKRomanStandardTrial-Regular,serif;
   font-size: 14.4px;
   text-transform: uppercase;
   letter-spacing: 0.027em; */
+
+  /* font-family: NotoSerif-Regular,serif;
+  font-size: 17px; */
+
+  /* font-family: Century,serif;
+  font-size: 16.8px; */
+  /* letter-spacing: 0.003em; */
 
   /* font-family: FKGroteskSemiMonoTrial-Regular,sans-serif; */
 }

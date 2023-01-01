@@ -216,6 +216,13 @@ iframe{
   border: none;
   width: calc(100% + 300px);
   height: 100vh;
+  -ms-zoom: 0.973;
+  -moz-transform: scale(0.973);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.973);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.973);
+  -webkit-transform-origin: 0 0;
 }
 
 .row1 {
