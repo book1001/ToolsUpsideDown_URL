@@ -290,7 +290,7 @@ iframe{
 
 .tb4 {
 	display: grid;
-  grid-template-columns: 80px 80px 1fr 1fr;
+  grid-template-columns: 70px 80px 1fr 1fr;
   column-gap: 10px;
   row-gap: 10px;
   border-bottom: 1px solid #000000;
