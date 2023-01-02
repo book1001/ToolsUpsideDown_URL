@@ -10,11 +10,50 @@
   .row2 {
     top: 58px;
     width: 100%;
+    height: calc(100% - 58px);
     padding: 0 20px 0 20px;
   }
 
+}
 
+@media only screen and (max-height:768px) {
 
+  .row1 {
+    top: 58px;
+    left: 0;
+    width: auto;
+    margin: 0;
+    padding: 0 20px 0 20px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row2 {
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 58px);
+    margin: 0;
+    padding: 0 20px 0 20px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row3 {
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 58px);
+    margin: 0;
+    /* margin: 0 10px 0 10px; */
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    transform: translate(0, 0);
+    border: 0px solid #000000;
+  }
 }
 
 @media only screen and (min-width:1125px) {
@@ -37,7 +76,7 @@
 
 }
 
-@media only screen and (max-width:600px),(max-height:700px) {   /* For tablets: */
+@media only screen and (max-width:600px) {   /* For tablets: */
 
   .menu-top-right {
     position: fixed;
@@ -85,7 +124,7 @@
   .col2 {
       grid-template-columns: 1fr;
   }
-  
+
   .ppDetail {
     top: 60px;
     padding-top: auto;
