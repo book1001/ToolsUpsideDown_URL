@@ -146,7 +146,7 @@ ul.bullet{
 ul.bullet li::before {
   content: '☀︎';
   margin-left: -40px;
-  margin-right: 20px;
+  margin-right: 26px;
   /* content: '—';
   margin-left: -36px;
   margin-right: 20px; */
@@ -165,13 +165,13 @@ ul.bulletS{
 
   /* margin-top: 0px;
   margin-bottom: 10px; */
-  padding-left: 40px;
+  padding-left: 15px;
 }
 
 ul.bulletS li::before {
   content: '—';
-  margin-left: -40px;
-  margin-right: 5px;
+  margin-left: -15px;
+  margin-right: 4px;
   /* content: '—';
   margin-left: -36px;
   margin-right: 20px; */

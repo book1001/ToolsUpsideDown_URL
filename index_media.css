@@ -2,58 +2,65 @@
 @media only screen and (max-width:1300px) {
 
   .row1 {
-    top: 58px;
+    left: 0;
     width: 100%;
-    padding: 0 20px 0 20px;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
   }
 
   .row2 {
-    top: 58px;
+    left: 0;
     width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .scrollContents {
+    top: 58px;
     height: calc(100% - 58px);
     padding: 0 20px 0 20px;
   }
 
 }
 
-@media only screen and (max-height:768px) {
+@media only screen and (max-height:400px) {
 
-  .row1 {
-    top: 58px;
+  /* .row1 {
     left: 0;
-    width: auto;
-    margin: 0;
-    padding: 0 20px 0 20px;
+    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
   }
 
   .row2 {
-    top: 58px;
     left: 0;
     width: 100%;
-    height: calc(100% - 58px);
-    margin: 0;
-    padding: 0 20px 0 20px;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
   }
 
-  .row3 {
+  .scrollContents {
+    top: 58px;
+    height: calc(100% - 58px);
+    padding: 0 20px 0 20px;
+  } */
+
+  /* .row3 {
     top: 58px;
     left: 0;
     width: 100%;
     height: calc(100% - 58px);
     margin: 0;
-    /* margin: 0 10px 0 10px; */
     min-width: auto;
     min-height: auto;
     max-width: none;
     transform: translate(0, 0);
     border: 0px solid #000000;
-  }
+  } */
 }
 
 @media only screen and (min-width:1125px) {
@@ -86,26 +93,25 @@
   }
 
   .row1 {
-    top: 88px;
     left: 0;
-    width: auto;
-    margin: 0;
-    padding: 0 20px 0 20px;
+    width: 100%;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
   }
 
   .row2 {
-    top: 88px;
     left: 0;
     width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0 20px 0 20px;
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
+  }
+
+  .scrollContents {
+    top: 88px;
+    height: calc(100% - 88px);
+    padding: 0 20px 0 20px;
   }
 
   .row3 {
