@@ -160,6 +160,46 @@ ul.bullet li::before {
   padding-right: 10px; */
 }
 
+ul.bulletG6{
+  list-style:none;
+  /* padding-left:0px; */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+
+  /* margin-top: 0px;
+  margin-bottom: 10px; */
+  padding-left: 40px;
+}
+
+ul.bulletG6 li::before {
+  content: '60%';
+  margin-left: -40px;
+  margin-right: 10px;
+}
+
+ul.bulletG2{
+  list-style:none;
+  /* padding-left:0px; */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+
+  /* margin-top: 0px;
+  margin-bottom: 10px; */
+  padding-left: 40px;
+}
+
+ul.bulletG2 li::before {
+  content: '20%';
+  margin-left: -40px;
+  margin-right: 10px;
+}
+
 ul.bulletS{
   font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
   list-style:none;
