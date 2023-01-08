@@ -53,6 +53,9 @@ function ppOpen16() {
 function ppOpen17() {
   document.getElementById("ppDetail17").style.display = "block";
 }
+function ppOpen18() {
+  document.getElementById("ppDetail18").style.display = "block";
+}
 
 
 function ppClose() {
@@ -73,6 +76,7 @@ function ppClose() {
   document.getElementById("ppDetail15").style.display = "none";
   document.getElementById("ppDetail16").style.display = "none";
   document.getElementById("ppDetail17").style.display = "none";
+  document.getElementById("ppDetail18").style.display = "none";
 }
 
 
@@ -113,6 +117,7 @@ $(document).ready(function(){
     animateDiv('.pp15');
     animateDiv('.pp16');
     animateDiv('.pp17');
+    animateDiv('.pp18');
   });
 });
 
@@ -134,6 +139,7 @@ $(document).ready(function(){
 //     animateDiv('.pp15');
 //     animateDiv('.pp16');
 //     animateDiv('.pp17');
+//     animateDiv('.pp18');
 // });
 
 function makeNewPosition(){
