@@ -19,6 +19,7 @@
 
   .scrollContents {
     top: 58px;
+    width: 100%;
     height: calc(100% - 58px);
     padding: 0 20px 0 20px;
   }
