@@ -40,7 +40,8 @@
 .pp15,
 .pp16,
 .pp17,
-.pp18 {
+.pp18,
+.pp19 {
   display: none;
   position: fixed;
   top: 50%;
@@ -69,7 +70,8 @@
 .pp15:hover,
 .pp16:hover,
 .pp17:hover,
-.pp18:hover {
+.pp18:hover,
+.pp19:hover {
   cursor: pointer;
 }
 
@@ -109,7 +111,8 @@
 #ppDetail15,
 #ppDetail16,
 #ppDetail17,
-#ppDetail18 {
+#ppDetail18,
+#ppDetail19 {
   display: none;
 }
 
