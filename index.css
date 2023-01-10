@@ -211,11 +211,13 @@ iframe{
 
 .toolsWorld{
   position: fixed;
-  top: 0;
+  /* top: 0; */
+  top: -1900px;
   left: -200px;
   border: none;
   width: calc(100% + 350px);
-  height: calc(100% + 300px);
+  /* height: calc(100% + 300px); */
+  height: calc(100% + 300px + 1900px);
   -ms-zoom: 0.973;
   -moz-transform: scale(0.973);
   -moz-transform-origin: 0 0;
