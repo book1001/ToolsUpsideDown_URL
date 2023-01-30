@@ -125,6 +125,16 @@ img.right {
   z-index: 5;
 }
 
+/* .menu-bottom-center {
+  position: fixed;
+  right: auto;
+  left:auto;
+  bottom: 0;
+  transform: translate(0%, 0);
+  width: 500px;
+  z-index: 5;
+} */
+
 
 /* Menu: Children > Tools Upside Down ================================================ */
 
@@ -211,13 +221,13 @@ iframe{
 
 .toolsWorld{
   position: fixed;
-  /* top: 0; */
-  top: -4200px;
+  top: 0;
+  /* top: -4200px; */
   left: -200px;
   border: none;
   width: calc(100% + 350px);
-  /* height: calc(100% + 300px); */
-  height: calc(100% + 300px + 4200px);
+  height: calc(100% + 300px);
+  /* height: calc(100% + 300px + 4200px); */
   -ms-zoom: 0.973;
   -moz-transform: scale(0.973);
   -moz-transform-origin: 0 0;
