@@ -201,8 +201,8 @@ box-sizing: border-box;
 /* The grid: Four equal columns that floats next to each other */
 .ppPreview {
   float: left;
-  width: 25%;
-  padding: 10px;
+  width: 20%;
+  padding: 20px;
 }
 
 /* Style the images inside the grid */
@@ -211,8 +211,11 @@ box-sizing: border-box;
 }
 
 .ppPreview img:hover {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  z-index: 8;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
 }
 
 

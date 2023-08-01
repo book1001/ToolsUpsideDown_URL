@@ -17,6 +17,29 @@
     transform: translate(0, 0);
   }
 
+  .row3 {
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row4 {
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .arena-project {
+    /* padding-top: 58px; */
+    top: 58px !important;
+    height: calc(100% - 58px) !important;
+    padding: 0 0 0 20px !important;
+  }
+
   .scrollContents {
     top: 58px;
     width: 100%;
@@ -109,24 +132,45 @@
     transform: translate(0, 0);
   }
 
+  .row3 {
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .row4 {
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    min-height: auto;
+    transform: translate(0, 0);
+  }
+
+  .arena-project {
+    top: 88px !important;
+    height: calc(100% - 88px) !important;
+    padding: 0 0 0 20px !important;
+  }
+
   .scrollContents {
     top: 88px;
     height: calc(100% - 88px);
     padding: 0 20px 0 20px;
   }
 
-  .row3 {
+  /* .row3 {
     top: 88px;
     left: 0;
     width: 100%;
     height: calc(100% - 88px);
     margin: 0;
-    /* margin: 0 10px 0 10px; */
     min-width: auto;
     min-height: auto;
     transform: translate(0, 0);
     border: 0px solid #000000;
-  }
+  } */
 
   .col2 {
       grid-template-columns: 1fr;

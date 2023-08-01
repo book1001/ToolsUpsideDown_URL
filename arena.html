@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Basal</title>
+  <!-- Basal – adj. forming or belonging to a bottom layer or base. -->
+  <!-- 🚨 NOTE 🚨 -->
+  <!-- This is for instructional purposes. -->
+  <!-- While you can technically use this for an actual website, -->
+  <!-- it serves you best as inspiration. -->
+
+
+  <!--  This is for routing  -->
+  <script src="//unpkg.com/navigo"></script>
+
+  <!-- Feel free to delete this, just some sane style defaults -->
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+
+  <!-- Styles for our different block types -->
+  <style type="text/css">
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .ChannelInfo {
+      margin: 2em 0;
+      padding: 1em;
+    }
+
+    .Block {
+      margin: 1em 0;
+      padding: 1em;
+    }
+
+    .Block__title {
+      display: block;
+      padding-bottom: 0.5em;
+    }
+
+    .BlockInner__Link {
+      font-weight: bold;
+      display: block;
+      font-size: 1.25em;
+    }
+
+    .BlockInner__Text p {
+      margin: 0.5em 0;
+      max-width: 600px;
+    }
+
+    .BlockInner__Channel {
+      border: 1px solid green;
+      padding: 1em 0.5em;
+      font-weight: bold;
+      color: green;
+      display: block;
+      text-decoration: none;
+    }
+
+    .Block iframe{
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body></body>
+
+<script type="module">
+  window.addEventListener("load", () => {
+    // Replace this with your channel slug
+    // (i.e. in https://www.are.na/charles-broskoski/on-gathering-ftmpeeykqm0 ..the last part)
+    let channelSlug = 'on-gathering-ftmpeeykqm0';
+
+    function renderChannel(slug) {
+      // Add a loading message
+      let loading = `Loading...`;
+      document.body.innerHTML = loading;
+
+      let contentsURL = `https://api.are.na/v2/channels/${slug}?sort=position&order=asc&per=100`;
+
+      // Fetch the channel data from the Are.na API
+      fetch(contentsURL)
+        // Grab the response in JSON
+        .then(response => response.json())
+
+        // Now we can channel data into content by mixing it with HTML
+        .then((channel) => {
+
+          document.title = channel.title;
+
+          // We are going to replace the inner html of our document
+          // with our own constructued HTML
+          document.body.innerHTML = `
+            <div class="ChannelInfo">
+              <h1>${channel.title}</h1>
+            </div>
+
+            <div class="ChannelContents">
+              ${channel.contents.map((block) => {
+                // First, we will loop through the contents of the channel.
+                // Each block will be an object.
+
+                // An example block:
+                //
+                {
+                  "id": 76969,
+                  "title": "The Working Sheepdog ( Border Collies ) in training",
+                  "updated_at": "2020-04-07T21:59:29.806Z",
+                  "created_at": "2013-02-12T22:40:15.696Z",
+                  "state": "available",
+                  "comment_count": 0,
+                  "generated_title": "The Working Sheepdog ( Border Collies ) in training",
+                  "content_html": "",
+                  "description_html": "<p>Border Collie Collies working sheepdog Sheep dogs in training Scotland</p>",
+                  "visibility": "public",
+                  "content": "",
+                  "description": "Border Collie Collies working sheepdog Sheep dogs in training Scotland",
+                  "source": {},
+                  "image": {},
+                  "embed": {},
+                  "attachment": null,
+                  "metadata": null,
+                  "base_class": "Block",
+                  "class": "Media",
+                  "user": {},
+                  "position": 1,
+                  "selected": false,
+                  "connection_id": 716562,
+                  "connected_at": "2016-05-16T00:59:42.901Z",
+                  "connected_by_user_id": 128,
+                  "connected_by_username": "Chris Sherrón",
+                  "connected_by_user_slug": "chris-sherron"
+                },
+
+                // We are going to return HTML, mixed in with the data from the block.
+                return `
+                  <div class="Block ${block.class}">
+
+                    ${(() => {
+                      if (block.title && block.class !== 'Link' && block.class !== 'Channel') {
+                        return `<strong class="Block__title">${block.title}</strong>`;
+                      }
+
+                      return ``;
+                    })()}
+
+
+                    ${(() => {
+                      // Return a different bit of HTML, depending on what type of block it is
+                      switch (block.class) {
+                        case "Image":
+                          return `
+                            <img
+                              class="BlockInner__Image"
+                              src="${block.image.large.url}"
+                            />
+                        `;
+                        case "Text":
+                          return `<div class="BlockInner__Text">${block.content_html}</div>`;
+                        case "Attachment":
+                        case "Link":
+                          return `<a href="${block.source && block.source.url}" class="BlockInner__Link">${block.title}</a>`;
+                        case "Media":
+                          return `<div class="BlockInner__Media">${block.embed.html}</div>`;
+                        case "Channel":
+                          return `<a href="#/channel/${block.slug}" class="BlockInner__Channel" data-navigo>${block.title}</a>`;
+                      }
+                    })()}
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          `
+        })
+      }
+
+    // This will handle our routes
+    const router = new Navigo("/", { hash: true });
+    router
+      .on("/channel/:slug", (match) => { renderChannel(match.data.slug) })
+      .on(() => { renderChannel(channelSlug) })
+      .resolve();
+  });
+
+</script>
+</html>

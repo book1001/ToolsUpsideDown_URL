@@ -1,0 +1,260 @@
+/* ============================================================================== */
+/* backup for Are.na stylesheet: https://www.are.na/halim-lee/archive-hebbgnbzq4q */
+/* ============================================================================== */
+
+
+/* font: import ================================================ */
+
+@font-face {
+  font-family: 'FKGroteskMonoTrial-Regular';
+  src: url('https://toolsupsidedown.com/font/FKGroteskMonoTrial-Regular.woff') format('woff');
+  src: url('https://toolsupsidedown.com/font/FKGroteskMonoTrial-Regular.woff2') format('woff2');
+}
+
+
+/* Variable ================================================ */
+
+:root {
+  --scrollbar-width: 20px;
+  --scrollbar-right: 0px;
+  --scrollbar-left: 17px;
+
+  --col1-width: 140px;
+  --col2-1-width: 310px;
+  --col2-extra: 3px;
+  --col3-width: 15%;
+  --col4-width: 120px; /* = --col1-width - --scrollbar-widt */
+}
+
+
+/* Scrollbar ================================================ */
+
+::-webkit-scrollbar { /* width */
+  width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track { /* Track */
+  background: transparent;
+}
+::-webkit-scrollbar-thumb { /* Handle */
+  background: rgb(0,0,0,1);
+  background-clip: padding-box;
+  border-top: 0px solid transparent;
+  border-right: var(--scrollbar-right) solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: var(--scrollbar-left) solid transparent;
+}
+::-webkit-scrollbar-thumb:active { /* Handle on hover */
+  /* background: rgb(0,0,0,0.24);
+  border-radius: 20px;
+  background-clip: padding-box;
+  border: 5px solid transparent; */
+}
+
+
+/* Layout ================================================ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  line-height: 1.5;
+}
+
+
+/* Blocks ================================================ */
+
+#blocks {
+  display: grid;
+  margin: 0;
+  margin: 20px 0 0 0;
+  padding-bottom: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+  /* grid-template-columns: 1fr repeat(2, 1fr);  */
+  column-gap: 20px;
+  row-gap: 20px;
+  font-size: 0;
+}
+
+#blocks div {
+  padding: 0;
+  color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* border-top: 1px solid #ffffff;
+  padding-top: 30px; */
+}
+
+#blocks div::-webkit-scrollbar {
+  width: var(--scrollbar-width) !important;
+}
+
+#blocks div:nth-child(1) {
+  grid-column: 1 / span 4;
+  border: solid;
+  border-color: #000000;
+  border-width: 0px 0px 1px 0px;
+  color: #000000;
+  background: transparent;
+}
+
+/* #blocks div:nth-child(1),
+#blocks div:nth-child(2),
+#blocks div:nth-child(3) {
+  border-top: 1px solid #ffffff;
+} */
+
+/* #blocks div:nth-child(1) {
+  position: fixed;
+  grid-row: 1;
+  grid-column: 1 / -1;
+  padding-top: 10px;
+  mix-blend-mode: difference;
+} */
+
+/* #blocks div:nth-child(2),#blocks div:nth-child(3),#blocks div:nth-child(4) {
+margin-top: 100px;
+} */
+
+.text {
+  /* grid-column: 1 / span 1;
+  border: solid;
+  border-color: #000000;
+  border-width: 18px 10px 18px 10px; */
+  /* border-bottom: 1px solid #000000; */
+  /* border-bottom: 1px solid #000000; */
+  max-height: 300px;
+  /* backdrop-filter: blur(20px); */
+  color: #ffffff;
+  background: #000000;
+}
+
+
+/* Elements ================================================ */
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+video {
+  width: 100%;
+}
+
+
+/* text: drag color ================================================ */
+
+::selection {
+  color: white;
+  background: black;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+
+/* text: default ================================================ */
+
+p {
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  /* letter-spacing: 0.027em; */
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  /* text-transform: uppercase; */
+}
+
+a {
+  text-decoration: none;
+  color: #b2b2b2;
+  /* position: relative;
+  visibility: hidden; */
+} 
+
+a:hover {
+  color: #565656;
+}
+
+/* a::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  content: "aaa";
+} */
+
+
+
+@media only screen and (min-width:1200px) {
+
+  /* Blocks ================================================ */
+
+  #blocks {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  }
+
+  .text {
+    grid-column: 1 / span 1;
+  }
+
+}
+
+
+@media only screen and (max-width:935px) {
+
+  /* Variable ================================================ */
+
+  :root {
+    --col1-height: 50px;
+    --col2-1-width: 290px;
+    --col4-height: 80px;
+
+    --col1-btn-padding: 6px;
+  }
+
+  /* Blocks ================================================ */
+
+  #blocks {
+    grid-template-columns: 1fr 1fr 1fr; 
+    margin: 0;
+  }
+
+  .text {
+    grid-column: 1 / span 1;
+  }
+
+
+  /* text: default ================================================ */
+
+}
+
+
+@media only screen and (max-width:400px) {
+
+  /* Variable ================================================ */
+
+  :root {
+    --col2-1-width: 0px;
+    --col3-width: 0%;
+    --col4-height: 54px;
+  }
+
+  /* Blocks ================================================ */
+
+  #blocks {
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .text {
+    grid-column: 1 / span 1;
+  }
+
+}
