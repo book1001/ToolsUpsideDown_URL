@@ -151,7 +151,7 @@
   .arena-project {
     top: 88px !important;
     height: calc(100% - 88px) !important;
-    padding: 0 0 0 20px !important;
+    padding: 0px !important;
   }
 
   .scrollContents {
