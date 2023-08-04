@@ -210,5 +210,9 @@ video {
   .Text {
     grid-column: 1 / span 3; 
   }
+
+  .Media {
+    grid-column: span 3;
+  }
   
 }
