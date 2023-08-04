@@ -29,9 +29,9 @@
       – TUD GROUP ARE.NA
     </a>
     <br><br>
-
+    <br>
     <hr>
-    <br><br>
+    
     
   </div>
   
@@ -53,66 +53,57 @@
       renderChannel(slug, page);
     }
     
-    function renderNextPage() {
-      page++;
-      renderChannel(slug, page);
-    }
-    
     function handleScroll() {
       const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 
       if (!isMobileDevice) {
         let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
 
-        if (isScrollAtBottom) {
+        if (isScrollAtBottom) { // pc
           page++;
           renderChannel(slug, page);
         }
         console.log(page);
-      }
-
-      if (isMobileDevice) {
-        let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
-
-        if (isScrollAtBottom) {
-          setTimeout(renderNextPage, 300);
-        }
-        console.log(page);
-      }
+      } 
     }
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchmove', handleScroll);
 
-    let isProcessingScroll = false; // 스크롤 처리 중인지 여부
-    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
-
     // function renderNextPage() {
     //   page++;
     //   renderChannel(slug, page);
     //   console.log(page);
-    //   isProcessingScroll = false;
     // }
-
+    
     // function handleScroll() {
+    //   const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+
     //   if (!isMobileDevice) {
     //     let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
 
     //     if (isScrollAtBottom) {
     //       page++;
     //       renderChannel(slug, page);
+    //     }
+    //     console.log(page);
+    //   }
+
+    //   if (isMobileDevice) {
+    //     let isScrollAtBottom = (window.pageYOffset + window.innerHeight > document.body.scrollHeight);
+
+    //     if (isScrollAtBottom) {
+    //       console.log("hi");
+    //       setTimeout(renderNextPage, 300);
     //       console.log(page);
     //     }
-    //   } else {
-    //     if (!isProcessingScroll) {
-    //       isProcessingScroll = true;
-    //       setTimeout(renderNextPage, 300); // 0.3초(300ms) 딜레이 후 페이지 추가
-    //     }
+        
     //   }
     // }
 
     // window.addEventListener('scroll', handleScroll);
     // window.addEventListener('touchmove', handleScroll);
+
 
 
     function renderTitle(slug) {
@@ -131,7 +122,7 @@
 
       // Fetch the channel data from the Are.na API
       let time = Date.now();
-      let per = 12;
+      let per = 50;
       let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
 
 
@@ -165,9 +156,6 @@
                           return `
                           <a href="https://www.are.na/block/${block.id}">
                             <img class="BlockInner__Image" src="${block.image.large.url}"/>
-                            <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">
-                              ${block.title}
-                            </p>
                           </a>
                           `;
 
@@ -183,9 +171,6 @@
                           return `
                           <a href="${block.source && block.source.url}" class="BlockInner__Link">
                             <img class="BlockInner__Image" src="${block.image.large.url}"/>
-                            <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">
-                            – ${block.title}
-                            </p>
                           </a>`;
 
                         case "Media":
@@ -193,7 +178,7 @@
                           <div class="BlockInner__Media">${block.embed.html}</div>
                           <a href="https://www.are.na/block/${block.id}">
                             <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">
-                              – ${block.title}
+                              – Open Link
                             </p>
                           </a>
                           `;
