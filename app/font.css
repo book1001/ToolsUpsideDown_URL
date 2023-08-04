@@ -1,0 +1,116 @@
+/* font: import ================================================ */
+
+@font-face {
+  font-family: 'FKGroteskMonoTrial-Regular';
+  src: url('https://toolsupsidedown.com/font/FKGroteskMonoTrial-Regular.woff') format('woff');
+  src: url('https://toolsupsidedown.com/font/FKGroteskMonoTrial-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FKGroteskSemiMonoTrial-Regular';
+  src: url('https://toolsupsidedown.com/font/FKGroteskSemiMonoTrial-Regular.woff') format('woff');
+  src: url('https://toolsupsidedown.com/font/FKGroteskSemiMonoTrial-Regular.woff2') format('woff2');
+}
+
+
+/* text: drag color ================================================ */
+
+::selection {
+  color: white;
+  background: black;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+    
+
+/* text: default ================================================ */
+
+p {
+  font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+
+a {
+  font-family: FKGroteskSemiMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #000000;
+  /* color: #b2b2b2; */
+  /* position: relative;
+  visibility: hidden; */
+} 
+
+/* a:hover {
+  color: #565656;
+} */
+
+/* .Text a::before {
+  content: '–';
+  margin-right: 4px;
+} */
+
+
+h3 {
+  display: block;
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  letter-spacing: 0.027em;
+  text-transform: uppercase;
+  margin-block-start: 0em;
+  /* margin-block-end: 0.3em; */
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  /* text-indent: 50px; */
+}
+
+
+
+body {
+  display: block;
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  letter-spacing: 0.027em;
+  text-transform: uppercase;
+  margin-block-start: 20px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+}
+
+
+h1,
+h2,
+h4,
+figure,
+blockquote,
+dl,
+dd {
+  display: block;
+  font-family: FKGroteskMonoTrial-Regular,sans-serif;
+  font-size: 14.4px;
+  letter-spacing: 0.027em;
+/*   text-transform: uppercase; */
+  margin-block-start: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+}
+
+

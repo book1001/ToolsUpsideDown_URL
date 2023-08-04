@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <title>TUD projects</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+  <!-- Basal – adj. forming or belonging to a bottom layer or base. -->
+  <!-- 🚨 NOTE 🚨 -->
+  <!-- This is for instructional purposes. -->
+  <!-- While you can technically use this for an actual website, -->
+  <!-- it serves you best as inspiration. -->
+  <base target="_blank">
+  
+  <!--  This is for routing  -->
+  <script src="//unpkg.com/navigo"></script>
+
+  <!-- Feel free to delete this, just some sane style defaults -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" /> -->
+  
+  <!-- css -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="font.css">
+
+</head>
+
+<body>
+
+  <script type="module">
+    window.onload = function() {
+      let slug = 'test-vm8u0apfldw';
+      
+      renderTitle(slug);
+      renderChannel(slug);
+    }
+    
+    function renderTitle(slug) {
+      // Fetch the channel title from the Are.na API
+      let url = `https://api.are.na/v2/channels/${slug}/collaborators`;
+      
+      fetch(url)
+        .then(response => response.json())
+        .then(data => document.title = data.channel_title);
+    }
+    
+    function renderChannel(slug) {
+      // Add a loading message
+      let loading = `Loading...`;
+      document.body.innerHTML = loading;      
+
+      // Fetch the channel data from the Are.na API.
+      let time = Date.now();
+      let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=1&per=100`;
+      
+      fetch(url, {cache: 'no-cache'})
+        .then(response => response.json())
+        .then(channel => {
+          // We are going to replace the inner html of our document
+          // with our own constructued HTML
+        
+          //<p style="padding-bottom: 10px;">The tools we use form our world, just as the invention of the camera, the synthesizer, and the smartphone led to a huge change in the way we see and hear, contemporary tools like the iPhone, zoom, and 3D scanner, are changing our world.</p>
+          document.body.innerHTML = `
+            <div class="ChannelInfo">
+              <h3>Projects</h3>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 20px;">
+                <p>
+                  ➊ The World without Design Tools<br>
+                  ➋ Latent Medium as Tools<br>
+                  ❸ How To Tweak
+                </p>
+                <p>
+                  ➍ How To Represent<br>
+                  ➎ Image Operations<br>
+                  ➏ Final Project
+                </p>
+              </div>
+              <br>
+              <a href="https://www.are.na/halim-lee/test-vm8u0apfldw"><h3>– Are.na</h3></a>        
+            </div>
+            
+            <div class="ChannelContents">
+              ${channel.contents.map((block) => {            
+                // We are going to return HTML, mixed in with the data from the block.
+                return `
+                  <div class="Block ${block.class}">
+
+                    ${(() => {
+                      if (block.title && block.class !== 'Link' && block.class !== 'Channel') {
+                        return `<strong class="Block__title">${block.title}</strong>`;
+                      }
+
+                      return ``;
+                    })()}
+
+
+                    ${(() => {
+                      // Return a different bit of HTML, depending on what type of block it is
+                      switch (block.class) {
+                          
+                        case "Image":
+                          return `
+                          <a href="https://www.are.na/block/${block.id}">
+                            <img class="BlockInner__Image" src="${block.image.large.url}"/>
+                            <p style="max-height: 90px; overflow-y:auto;">
+                              ${block.description}
+                            </p>
+                          </a>
+                          `;
+                          
+                        case "Text":
+                          return `<div class="BlockInner__Text">${block.content_html}</div>`;
+                        case "Attachment":
+                    
+                        case "Link":
+                          return `
+                          <a href="${block.source && block.source.url}" class="BlockInner__Link">
+                            – ${block.title}
+                          </a>`;
+                          
+                        case "Media":
+                          return `
+                          <div class="BlockInner__Media">${block.embed.html}</div>
+                          <a href="https://www.are.na/block/${block.id}"><p>– Play on Are.na</p></a>
+                          `;
+                          
+                        case "Channel":
+                          return `
+                          <a href="#/channel/${channel.slug}" class="BlockInner__Channel" data-navigo>${block.title}</a>`;
+                      }
+                    })()}
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          `
+      })
+    }
+  </script>
+  
+</body>
+
+</html>
