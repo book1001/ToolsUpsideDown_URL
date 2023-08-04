@@ -53,54 +53,67 @@
       renderChannel(slug, page);
     }
     
-    // function handleScroll() {
-    //   const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
-
-    //   if (!isMobileDevice) {
-    //     let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
-
-    //     if (isScrollAtBottom) {
-    //       page++;
-    //       renderChannel(slug, page);
-    //     }
-    //     console.log(page);
-    //   }
-    // }
-
-    // window.addEventListener('scroll', handleScroll);
-    // window.addEventListener('touchmove', handleScroll);
-
-    let isProcessingScroll = false; // 스크롤 처리 중인지 여부
-    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
-
     function renderNextPage() {
+      page++;
       renderChannel(slug, page);
-      console.log(page);
-      isProcessingScroll = false;
     }
-
+    
     function handleScroll() {
+      const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+
       if (!isMobileDevice) {
         let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
 
         if (isScrollAtBottom) {
           page++;
           renderChannel(slug, page);
-          console.log(page);
         }
-      } else {
-        if (!isProcessingScroll) {
-          isProcessingScroll = true;
-          setTimeout(renderNextPage, 300); // 0.3초(300ms) 딜레이 후 페이지 추가
+        console.log(page);
+      }
+
+      if (isMobileDevice) {
+        let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+
+        if (isScrollAtBottom) {
+          setTimeout(renderNextPage, 300);
         }
+        console.log(page);
       }
     }
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchmove', handleScroll);
 
+    let isProcessingScroll = false; // 스크롤 처리 중인지 여부
+    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 
-    
+    // function renderNextPage() {
+    //   page++;
+    //   renderChannel(slug, page);
+    //   console.log(page);
+    //   isProcessingScroll = false;
+    // }
+
+    // function handleScroll() {
+    //   if (!isMobileDevice) {
+    //     let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+
+    //     if (isScrollAtBottom) {
+    //       page++;
+    //       renderChannel(slug, page);
+    //       console.log(page);
+    //     }
+    //   } else {
+    //     if (!isProcessingScroll) {
+    //       isProcessingScroll = true;
+    //       setTimeout(renderNextPage, 300); // 0.3초(300ms) 딜레이 후 페이지 추가
+    //     }
+    //   }
+    // }
+
+    // window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('touchmove', handleScroll);
+
 
     function renderTitle(slug) {
       // Fetch the channel title from the Are.na API
