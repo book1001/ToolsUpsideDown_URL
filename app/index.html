@@ -84,7 +84,7 @@
 //       console.log(page);
 //     });
     function handleScroll() {
-      let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 100 > document.body.scrollHeight);
+      let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
 
       if (isScrollAtBottom) {
         page++;
@@ -114,7 +114,7 @@
 
       // Fetch the channel data from the Are.na API
       let time = Date.now();
-      let per = 100;
+      let per = 10;
       let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
 
 
