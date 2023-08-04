@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <title>Projects</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+  <base target="_blank">
+  
+  <!--  This is for routing  -->
+  <script src="//unpkg.com/navigo"></script>
+  
+  <!-- css -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="font.css">
+
+</head>
+
+<body>
+  <div class="ChannelInfo">
+    <h3>Projects</h3>
+              
+    <p style="padding-bottom: 10px;">
+      Projects on this page are linked to the TUD Are.na channel.<br> 
+      Feel free to add or delete any projects you'd like to share!
+    </p>
+
+    <a href="https://www.are.na/tools-upside-down/2023-tools-upside-down-project-2vclagznasw">
+      – TUD PROJECT ARE.NA
+    </a>
+    <br><br>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 20px;">
+      <p>
+        ➊ The World without Design Tools<br>
+        ➋ Latent Medium as Tools<br>
+        ❸ How To Tweak
+      </p>
+      <p>
+        ➍ How To Represent<br>
+        ➎ Image Operations<br>
+        ➏ Final Project
+      </p>
+    </div>
+    <br>
+  </div>
+  
+  <div class="ChannelContents">
+    
+  </div>
+
+  <script type="module">
+    // let slug = '2023-tools-upside-down';
+    // let slug = '2023-tools-upside-down-project-2vclagznasw';
+    let slug = 'test-vm8u0apfldw';
+    
+    let page = 1; // Initialize the page number
+
+    window.onload = function() {
+      // Initial renering
+      renderTitle(slug);
+      renderChannel(slug, page);
+    }
+    
+//     window.addEventListener('scroll', function() {
+//       // let isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+//       let isScrollAtBottom = (document.documentElement.scrollTop + window.innerHeight + 100 > document.documentElement.offsetHeight);
+
+//       if (isScrollAtBottom) {
+//         page++;
+//         renderChannel(slug, page);
+//       }
+//       console.log(page);
+//     });
+    
+//     window.addEventListener('scroll', function() {
+//       let isScrollAtBottom = (window.pageYOffset + window.innerHeight > document.body.scrollHeight);
+
+//       if (isScrollAtBottom) {
+//         page++;
+//         renderChannel(slug, page);
+//       }
+//       console.log(page);
+//     });
+    function handleScroll() {
+      let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+
+      if (isScrollAtBottom) {
+        page++;
+        renderChannel(slug, page);
+      }
+      console.log(page);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
+
+
+
+    function renderTitle(slug) {
+      // Fetch the channel title from the Are.na API
+      let url = `https://api.are.na/v2/channels/${slug}/collaborators`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => document.title = data.channel_title);
+    }
+
+    function renderChannel(slug, page) {
+      // Add a loading message
+      // let loading = `Loading...`;
+      // document.body.innerHTML = loading;      
+
+      // Fetch the channel data from the Are.na API
+      let time = Date.now();
+      let per = 10;
+      let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
+
+
+      fetch(url, {cache: 'no-cache'})
+        .then(response => response.json())
+        .then(channel => {
+
+          // Channel Info
+          // document.body.innerHTML = `
+          let elements = `${channel.contents.map(block => {
+
+
+                // We are going to return HTML, mixed in with the data from the block.
+                return `
+                  <div class="Block ${block.class}">
+
+                    ${(() => {
+                      if (block.title && block.class !== 'Link' && block.class !== 'Channel') {
+                        return `<strong class="Block__title">${block.title}</strong>`;
+                      }
+
+                      return ``;
+                    })()}
+
+
+                    ${(() => {
+                      // Return a different bit of HTML, depending on what type of block it is
+                      switch (block.class) {
+
+                        case "Image":
+                          return `
+                          <a href="https://www.are.na/block/${block.id}">
+                            <img class="BlockInner__Image" src="${block.image.large.url}"/>
+                            <p style="max-height: 90px; overflow-y:auto;">
+                              ${block.description}
+                            </p>
+                          </a>
+                          `;
+                          
+                        case "Text":
+                          return `
+                          <div class="BlockInner__Text">
+                            ${block.content_html}
+                          </div>`;
+                          
+                        case "Attachment":
+                          return `
+                          <a href="https://www.are.na/block/${block.id}" class="BlockInner__Channel">
+                            – View attachment
+                          </a>`;
+                    
+                        case "Link":
+                          return `
+                          <a href="${block.source && block.source.url}" class="BlockInner__Link">
+                            – ${block.title}
+                          </a>`;
+                          
+                        case "Media":
+                          return `
+                          <div class="BlockInner__Media">
+                            ${block.embed.html}
+                          </div>
+                          <a href="https://www.are.na/block/${block.id}"><p>
+                            – Play on Are.na
+                          </p></a>
+                          `;
+                          
+                        case "Channel":
+                          return `
+                          <a href="https://www.are.na/channel/${block.slug}" class="BlockInner__Channel" data-navigo>
+                            – ${block.title}
+                          </a>`;
+                      }
+                    })()}
+                  </div>
+                `;
+              }).join("")}`;
+        
+        let contents = document.getElementsByClassName("ChannelContents")[0];
+        contents.insertAdjacentHTML("beforeend", elements);
+      
+      })
+    }
+  </script>
+</body>
+  
+
+
+</html>
