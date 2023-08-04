@@ -50,6 +50,8 @@
     
   </div>
 
+  <div class="ScrollMaker" style="position: absolute; top: 0; width: 100px; height: calc(100% + 10px);"></div>
+
   <script type="module">
     // let slug = '2023-tools-upside-down';
     // let slug = '2023-tools-upside-down-project-2vclagznasw';
@@ -114,7 +116,7 @@
 
       // Fetch the channel data from the Are.na API
       let time = Date.now();
-      let per = 10;
+      let per = 16;
       let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
 
 

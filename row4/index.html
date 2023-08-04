@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>TUD resources</title>
+  <title>Resources</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -38,6 +38,8 @@
     
   </div>
 
+  <div class="ScrollMaker" style="position: absolute; top: 0; width: 100px; height: calc(100% + 10px);"></div>
+
   <script type="module">
     let slug = '2023-tools-upside-down';
     // let slug = '2023-tools-upside-down-project-2vclagznasw';
@@ -49,17 +51,6 @@
       renderTitle(slug);
       renderChannel(slug, page);
     }
-    
-//     window.addEventListener('scroll', function() {
-//       // let isScrollAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
-//       let isScrollAtBottom = (document.documentElement.scrollTop + window.innerHeight + 100 > document.documentElement.offsetHeight);
-
-//       if (isScrollAtBottom) {
-//         page++;
-//         renderChannel(slug, page);
-//       }
-//       console.log(page);
-//     });
     
     function handleScroll() {
       let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
@@ -91,7 +82,7 @@
 
       // Fetch the channel data from the Are.na API
       let time = Date.now();
-      let per = 10;
+      let per = 16;
       let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
 
 
