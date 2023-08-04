@@ -32,6 +32,7 @@
 
     <hr>
     <br><br>
+    
   </div>
   
   <div class="ChannelContents">
@@ -64,6 +65,24 @@
 
     // window.addEventListener('scroll', handleScroll);
     // window.addEventListener('touchmove', handleScroll);
+
+    function handleScroll() {
+      const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+
+      if (!isMobileDevice) {
+        let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+
+        if (isScrollAtBottom) {
+          page++;
+          renderChannel(slug, page);
+        }
+        console.log(page);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchmove', handleScroll);
+
     
 
     function renderTitle(slug) {
