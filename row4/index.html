@@ -54,34 +54,51 @@
     }
     
     // function handleScroll() {
-    //   let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+    //   const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 
-    //   if (isScrollAtBottom) {
-    //     page++;
-    //     renderChannel(slug, page);
+    //   if (!isMobileDevice) {
+    //     let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
+
+    //     if (isScrollAtBottom) {
+    //       page++;
+    //       renderChannel(slug, page);
+    //     }
+    //     console.log(page);
     //   }
-    //   console.log(page);
     // }
 
     // window.addEventListener('scroll', handleScroll);
     // window.addEventListener('touchmove', handleScroll);
 
-    function handleScroll() {
-      const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
+    let isProcessingScroll = false; // 스크롤 처리 중인지 여부
+    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 
+    function renderNextPage() {
+      renderChannel(slug, page);
+      console.log(page);
+      isProcessingScroll = false;
+    }
+
+    function handleScroll() {
       if (!isMobileDevice) {
         let isScrollAtBottom = (window.pageYOffset + window.innerHeight + 10 > document.body.scrollHeight);
 
         if (isScrollAtBottom) {
           page++;
           renderChannel(slug, page);
+          console.log(page);
         }
-        console.log(page);
+      } else {
+        if (!isProcessingScroll) {
+          isProcessingScroll = true;
+          setTimeout(renderNextPage, 300); // 0.3초(300ms) 딜레이 후 페이지 추가
+        }
       }
     }
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchmove', handleScroll);
+
 
     
 
@@ -101,7 +118,7 @@
 
       // Fetch the channel data from the Are.na API
       let time = Date.now();
-      let per = 50;
+      let per = 12;
       let url = `https://api.are.na/v2/channels/${slug}/contents?t=${time}&direction=desc&sort=position&page=${page}&per=${per}`;
 
 
