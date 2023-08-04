@@ -290,7 +290,6 @@ iframe{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
-  background: red;
 }
 
 /* .row3 {
