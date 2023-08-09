@@ -21,8 +21,9 @@
   <div class="ChannelInfo">
     <h3>Archive</h3>
 
-    <p style="padding-bottom: 10px;">
-      Resources on this page are linked to the TUD Are.na channel.
+    <p class="pcview" style="padding-bottom: 10px;">
+      Resources on this page are linked to the TUD Are.na channel.<br>
+      In mobile view, currently up to 50 blocks will be loaded.
     </p>
 
     <a href="https://www.are.na/tools-upside-down/2023-tools-upside-down">
@@ -30,9 +31,8 @@
     </a>
     <br><br>
     <br>
-    <hr>
-    
-    
+    <!-- <hr> -->
+  
   </div>
   
   <div class="ChannelContents">
@@ -53,6 +53,7 @@
       renderChannel(slug, page);
     }
     
+    
     function handleScroll() {
       const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
 
@@ -64,7 +65,7 @@
           renderChannel(slug, page);
         }
         console.log(page);
-      } 
+      }
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -177,7 +178,7 @@
                           return `
                           <div class="BlockInner__Media">${block.embed.html}</div>
                           <a href="https://www.are.na/block/${block.id}">
-                            <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; text-transform: uppercase;">
                               – Open Link
                             </p>
                           </a>

@@ -33,19 +33,25 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; row-gap: 20px;">
       <p>
-        ➊ The World without Design Tools<br>
-        ➋ Latent Medium as Tools<br>
-        ❸ How To Tweak
+        ➏ Final Project<br>
+        ➎ Image Operations<br>
+        ➍ How To Represent
       </p>
       <p>
-        ➍ How To Represent<br>
-        ➎ Image Operations<br>
-        ➏ Final Project
+        ❸ How To Tweak<br>
+        ➋ Latent Medium as Tools<br>
+        ➊ The World without Design Tools
       </p>
     </div>
     <br>
+
+
+    <br><br><br><br><br><br><br><br>
+    <p style="padding-bottom: 10px; text-align: center;">
+      This page will be open next Monday (Aug 14 ET)
+    </p>
   </div>
-  
+
   <div class="ChannelContents">
     
   </div>
@@ -130,8 +136,8 @@
                           return `
                           <a href="https://www.are.na/block/${block.id}">
                             <img class="BlockInner__Image" src="${block.image.large.url}"/>
-                            <p style="max-height: 90px; overflow-y:auto;">
-                              ${block.description}
+                            <p style="max-height: 90px; overflow-y:auto; text-align: center; text-transform: uppercase;">
+                              ${block.title}
                             </p>
                           </a>
                           `;
@@ -140,30 +146,38 @@
                           return `
                           <div class="BlockInner__Text">
                             ${block.content_html}
-                          </div>`;
+                          </div>
+                          `;
                           
                         case "Attachment":
                           return `
                           <a href="https://www.are.na/block/${block.id}" class="BlockInner__Channel">
-                            – View attachment
-                          </a>`;
+                            – Open PDF
+                          </a>
+                          <a href="https://www.are.na/block/${block.id}">
+                            <p style="max-height: 90px; overflow-y:auto; text-align: center; text-transform: uppercase;">
+                              ${block.title}
+                            </p>
+                          </a>
+                          `;
                     
                         case "Link":
                           return `
                           <a href="${block.source && block.source.url}" class="BlockInner__Link">
                             <img class="BlockInner__Image" src="${block.image.large.url}"/>
-                            <p style="max-height: 90px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;">
-                              – Open Link
-                            </p>
-                          </a>`;
+                          </a>
+                          <a href="https://www.are.na/block/${block.id}"><p style="text-align: center; text-transform: uppercase;">
+                            ${block.title}
+                          </p></a>
+                          `;
                           
                         case "Media":
                           return `
                           <div class="BlockInner__Media">
                             ${block.embed.html}
                           </div>
-                          <a href="https://www.are.na/block/${block.id}"><p>
-                            – Play on Are.na
+                          <a href="https://www.are.na/block/${block.id}"><p style="text-align: center; text-transform: uppercase;">
+                            ${block.title}
                           </p></a>
                           `;
                           
@@ -171,7 +185,8 @@
                           return `
                           <a href="https://www.are.na/channel/${block.slug}" class="BlockInner__Channel" data-navigo>
                             – ${block.title}
-                          </a>`;
+                          </a>
+                          `;
                       }
                     })()}
                   </div>

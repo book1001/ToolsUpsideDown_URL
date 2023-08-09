@@ -69,15 +69,18 @@ hr {
 }
 
 .ChannelContents {
-  display: grid;
-  margin: 0;
+  display: flex;
+  /* display: grid; */
   margin: 20px 0 0 0;
   padding-bottom: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;  */
   /* grid-template-columns: 1fr repeat(2, 1fr);  */
   column-gap: 20px;
   row-gap: 20px;
   font-size: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 
@@ -89,6 +92,8 @@ hr {
   overflow-x: hidden;
   overflow-y: auto;
   word-wrap: break-word;
+  flex-grow: 1;
+  width: 22%;
 }
 
 .Block__title {
@@ -142,6 +147,8 @@ hr {
   width: 100%;
   height: 100%;
   border: none;
+  /* outline: solid 1px #000000;
+  outline-offset: -1px; */
 }
 
 
@@ -167,6 +174,7 @@ hr {
 }
 
 .Media {
+  width: 32%;
   height: 100%;
   grid-column: span 2;
 }
@@ -186,6 +194,9 @@ hr {
 
 img {
   width: 100%;
+  /* outline: solid 1px #000000;
+  outline-offset: -1px; */
+  /* background: #000000; */
 }
 
 video {
@@ -214,5 +225,15 @@ video {
   .Media {
     grid-column: span 3;
   }
+
+  .pcView {
+    display: none;
+  }
+  
+  .mobileView {
+    display: block;
+  }
   
 }
+
+
